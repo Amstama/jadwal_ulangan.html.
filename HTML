@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Jadwal Ulangan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .schedule {
+            width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .day {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .day:hover {
+            background: #f0f0f0;
+        }
+
+        .day a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .day a:hover {
+            color: #007BFF;
+        }
+
+        .day:last-child {
+            border-bottom: none;
+        }
+
+        .link {
+            display: none;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="schedule">
+        <div class="day" onclick="toggleLink(this)">
+            <span>Senin: PPKn, MTK</span>
+            <div class="link"><a href="#">Lihat Detail</a></div>
+        </div>
+        <div class="day" onclick="toggleLink(this)">
+            <span>Selasa: Kimia, B. Inggris, PKWU</span>
+            <div class="link"><a href="#">Lihat Detail</a></div>
+        </div>
+        <div class="day" onclick="toggleLink(this)">
+            <span>Rabu: Informatika, B. Indo, Ekonomi</span>
+            <div class="link"><a href="#">Lihat Detail</a></div>
+        </div>
+        <div class="day" onclick="toggleLink(this)">
+            <span>Kamis: Pend Agama, Seni Budaya, Geografi</span>
+            <div class="link"><a href="#">Lihat Detail</a></div>
+        </div>
+        <div class="day" onclick="toggleLink(this)">
+            <span>Jumat: Sejarah Indo, Pramuka (TLS)</span>
+            <div class="link"><a href="#">Lihat Detail</a></div>
+        </div>
+        <div class="day" onclick="toggleLink(this)">
+            <span>Senin (2): PJOK, Pramuka (PRK)</span>
+            <div class="link"><a href="#">Lihat Detail</a></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLink(dayElement) {
+            const link = dayElement.querySelector('.link');
+            link.style.display = link.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
